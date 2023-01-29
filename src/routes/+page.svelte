@@ -23,12 +23,14 @@
     },
   }
   //const { counter } = useQuery(query)
-  const count = 0//counter?.count || 0
+  let count = 0//counter?.count || 0
 
   $: console.log($db)
 
   $: if ($db) {
-    console.log(instaql.query(query, optimisticStore(db.state)))
+    const test = instaql.query(query, optimisticStore(db.state))
+    console.log(test)
+    count = test.counter.count
   }
 
   $: if ($db?.status === 'online' && count === 0) {

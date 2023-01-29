@@ -1,8 +1,8 @@
 import ReactiveDB, { optimisticStore } from "@instantdb/react/dist/ReactiveDB"
 import { assertUnreachable } from "@instantdb/react/dist/util/error"
 
-import { assert } from "@instantdb/react/dist/util/error";
-import * as uuid from "uuid";
+import { assert } from "@instantdb/react/dist/util/error"
+import * as uuid from "uuid"
 //import * as r from "./react";
 import * as instatx from "@instantdb/react/dist/instatx"
 import * as instaql from "@instantdb/react/dist/instaql"
@@ -72,9 +72,9 @@ export function useInit(config) {
     _GLOBAL_DB = new ReactiveDB(config);
   }
   _GLOBAL_DB.start()
-  _GLOBAL_DB.subscribe((state) => {
-    console.log(state)
-  })
+  // _GLOBAL_DB.subscribe((state) => {
+  //   console.log(state)
+  // })
   return _GLOBAL_DB
 }
 
